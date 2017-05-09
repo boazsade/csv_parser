@@ -23,7 +23,6 @@ struct matcher
     const std::string what;
 };
 
-
 void count_csv(std::ifstream& input, const std::string& what, int index)
 {
     csv::parser::source_type buffer{input};
@@ -33,6 +32,7 @@ void count_csv(std::ifstream& input, const std::string& what, int index)
                         csv::make_rows_iterator_end(parser, buffer), m);
     std::cout<<"we found "<<count<<" entries for "<<what<<std::endl;
 }
+
 note that this would use default tokens delimiter of ',' char and '"' as escape for quation of string
 
 please note that you would need boost installed (specifically boost iterators) in order to compile the code
