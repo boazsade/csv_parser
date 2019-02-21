@@ -6,7 +6,7 @@ The code in this project require a compiler with support for C++14
 This code would parse CSV formatted input in the form of C++ like stream - the stream can be costomzied to be C++ like stream
 but it is not a requirement in the code itself, only a templated default.
 a code example can be found under the example directory but in general - using iterators interface it would look like this:
-
+```cpp
 struct matcher
 {
     matcher(int i, const std::string& w) : index(i), what(w)
@@ -32,7 +32,7 @@ void count_csv(std::ifstream& input, const std::string& what, int index)
                         csv::make_rows_iterator_end(parser, buffer), m);
     std::cout<<"we found "<<count<<" entries for "<<what<<std::endl;
 }
-
+```
 note that this would use default tokens delimiter of ',' char and '"' as escape for quation of string
 
 please note that you would need boost installed (specifically boost iterators) in order to compile the code
